@@ -27,11 +27,11 @@ function App() {
       token = "";
     }
 
-    Axios.post("http://localhost:5000/users/tokenIsValid", null, {
+    Axios.post("/users/tokenIsValid", null, {
       headers: { "x-auth-token": token },
     }).then((tokenRes) => {
       if (tokenRes) {
-        Axios.get("http://localhost:5000/users", {
+        Axios.get("/users", {
           headers: { "x-auth-token": token },
         }).then((res) => {
           setUserData({

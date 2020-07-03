@@ -7,7 +7,7 @@ const ExercisesList = () => {
   const [posts, SetPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/posts").then((res) => {
+    axios.get("/posts").then((res) => {
       SetPosts(res.data);
     });
   }, []);

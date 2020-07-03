@@ -23,7 +23,7 @@ const EditExercise = (props) => {
   function formSubmited(e) {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/posts/update/${props.id}`, dataa)
+      .post(`/posts/update/${props.id}`, dataa)
       .then((res) => {
         navigate("/myposts");
       })

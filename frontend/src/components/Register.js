@@ -17,7 +17,7 @@ const Register = () => {
       password,
       passwordCheck,
     };
-    await Axios.post("http://localhost:5000/users/register", data)
+    await Axios.post("/users/register", data)
       .then((response) => {
         alertMessage("success", "User registered successfully");
         setTimeout(() => {
@@ -31,7 +31,7 @@ const Register = () => {
         }, 2500);
       });
 
-    Axios.post("http://localhost:5000/users/login", {
+    Axios.post("/users/login", {
       username,
       password,
     })

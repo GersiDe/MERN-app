@@ -10,14 +10,14 @@ const ExercisesList = () => {
   const [id, SetId] = useState("");
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/posts/author/${author}`).then((res) => {
+    axios.get(`/posts/author/${author}`).then((res) => {
       SetPosts(res.data);
     });
   }, []);
 
   function deleteItem(e) {
     e.preventDefault();
-    axios.delete(`http://localhost:5000/posts/${id}`);
+    axios.delete(`/posts/${id}`);
 
     SetPosts(posts.filter((exe) => exe._id !== id));
   }
@@ -31,8 +31,7 @@ const ExercisesList = () => {
               <div>
                 <h2>You dont have any posts</h2>
                 <h4 class="font-weight-normal pt-2">
-                  To create one go to{" "}
-                  <a href="http://localhost:3000/create"> Create Posts</a>
+                  To create one go to <a href="/create"> Create Posts</a>
                 </h4>
               </div>
             ) : (

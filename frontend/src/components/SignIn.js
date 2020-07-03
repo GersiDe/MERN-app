@@ -15,7 +15,7 @@ const SignIn = () => {
       username,
       password,
     };
-    Axios.post("http://localhost:5000/users/login", data)
+    Axios.post("/users/login", data)
       .then((res) => {
         setUserData({
           token: res.data.token,

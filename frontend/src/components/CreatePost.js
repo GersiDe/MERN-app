@@ -25,7 +25,7 @@ const CreateExercise = () => {
 
   function formSubmited(e) {
     e.preventDefault();
-    Axios.post("http://localhost:5000/posts/add", data)
+    Axios.post("/posts/add", data)
       .then((response) => {
         alertMessage("success", "Post added successfully");
         setTimeout(() => {
