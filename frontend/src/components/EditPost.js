@@ -8,7 +8,7 @@ const EditExercise = (props) => {
   const [body, setBody] = useState("");
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/posts/${props.id}`).then((res) => {
+    axios.get(`/posts/${props.id}`).then((res) => {
       setData(res.data);
       setTitle(res.data.title);
       setBody(res.data.body);
